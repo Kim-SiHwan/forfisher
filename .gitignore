@@ -24,6 +24,8 @@ bin/
 *.ipr
 *.png
 *.yml
+*.yaml
+
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
