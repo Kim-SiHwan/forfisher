@@ -1,23 +1,32 @@
 <template>
   <v-app>
     <div id="app">
-      <img alt="logo" src="./assets/fLogo.png" width="100px"
-           onclick="window.location.reload()">
+      <img alt="logo" onclick="window.location.reload()" src="./assets/fLogo.png"
+           style="cursor: pointer"
+           width="100px">
       <v-card>
         <v-app-bar
             color=#4DA6EA
+            elevation="12"
             dark
             dense>
           <v-spacer>
-            <v-toolbar-title justify-center >낙 시 조 아</v-toolbar-title>
+            <v-toolbar-title justify-center
+                             onclick="window.location.reload()"
+                             style="cursor: pointer"
+            >낙 시 조 아
+            </v-toolbar-title>
           </v-spacer>
         </v-app-bar>
       </v-card>
+      <div v-if="loading"
+           style="position: absolute; left: 50%; top: 50%" class="spinner-border text-danger"></div>
 
+      <br>
       <fishing
           v-bind:propsData="items"
-          @searchName="searchName"
-          @getFiliter="findByFilter">
+          @getFilter="findByFilter"
+          @searchName="searchName">
 
       </fishing>
 
@@ -53,7 +62,10 @@ export default {
       axios.get('/api/list').then(res => {
         console.log(res);
         this.items = res;
+        this.setLoading(this.loading);
+
       })
+      this.setLoading(this.loading);
       console.log("start!");
     },
     searchName(items) {
@@ -78,7 +90,7 @@ export default {
       if (items.fName != null)
         this.typeString += "name";
 
-      axios.get('/api/findd',
+      axios.get('/api/find',
           {
             params: {
               place: items.place,
@@ -97,7 +109,14 @@ export default {
       this.loading = true;
       console.log("after! " + " " + this.loading);
     },
-
+    setLoading(isLoading){
+      if(isLoading){
+        this.loading=false;
+      }
+      if(!isLoading){
+        this.loading=true;
+      }
+    },
 
   },
   created() {
