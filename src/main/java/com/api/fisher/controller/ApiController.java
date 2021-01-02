@@ -1,6 +1,7 @@
 package com.api.fisher.controller;
 
 import com.api.fisher.config.ApplicationYamlRead;
+import com.api.fisher.dto.Request;
 import com.api.fisher.dto.Response;
 import com.api.fisher.service.ApiService;
 import lombok.RequiredArgsConstructor;
@@ -28,8 +29,8 @@ public class ApiController {
             //page=1, rows=761== MAX
             String urlStr = "http://api.data.go.kr/openapi/tn_pubr_public_fshlc_api?" +
                     "serviceKey=" + read.getServiceKey()+""+
-                    "&pageNo=0"+
-                    "&numOfRows=20"+
+                    "&pageNo=1"+
+                    "&numOfRows=761"+
                     "&type=json";
             URL url = new URL(urlStr);
 
@@ -64,6 +65,11 @@ public class ApiController {
     @GetMapping("/api/list")
     public ResponseEntity list(){
         return new ResponseEntity(getList(), HttpStatus.OK);
+    }
+
+    @GetMapping("/api/find")
+    public ResponseEntity findList(Request request){
+        return new ResponseEntity(service.findByFilters(request),HttpStatus.OK);
     }
 
 
