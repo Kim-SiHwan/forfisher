@@ -1,6 +1,7 @@
 package com.api.fisher.service;
 
 import com.api.fisher.domain.Domain;
+import com.api.fisher.dto.Request;
 import com.api.fisher.dto.Response;
 import com.api.fisher.repository.ApiRepository;
 import lombok.RequiredArgsConstructor;
@@ -24,6 +25,19 @@ public class ApiService {
         List<Response> list = domains.stream()
                 .map(m -> new Response(m))
                 .collect(Collectors.toList());
+        return list;
+    }
+
+    public List<Response> findByFilters(Request request){
+        System.out.println(request.getType()+" "+request.getPlace()+" "+request.getPlace2()+" "+request.getFish()+" "+request.getFisherType()+" "+request.getName());
+        List<Domain> domains = (List<Domain>) repository.findAll(repository.makePredicate(request));
+
+        System.out.println("fid ! ");
+        domains.forEach(s-> System.out.println(s.getFshlcNm()+" "+s.getRdnmadr()+" "+s.getLnmadr()+" "+s.getKdfsh()+" "+s.getFshlcType()));
+        List<Response> list = domains.stream()
+                .map(m-> new Response(m))
+                .collect(Collectors.toList());
+
         return list;
     }
 
