@@ -29,7 +29,9 @@
           @searchName="searchName">
 
       </fishing>
-
+      <div id="footer" class="">
+        <site-footer></site-footer>
+      </div>
     </div>
 
   </v-app>
@@ -39,6 +41,7 @@
 
 import fishing from "@/components/fishing";
 import axios from "axios";
+import SiteFooter from "@/components/SiteFooter";
 
 export default {
   name: 'App',
@@ -54,7 +57,8 @@ export default {
   },
 
   components: {
-    'fishing': fishing
+    'fishing': fishing,
+    'site-footer' : SiteFooter
   },
 
   methods: {
