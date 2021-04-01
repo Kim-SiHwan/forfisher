@@ -3,8 +3,6 @@
 
 ### 프로젝트 소개
 
-Back-end ⇒ SpringBoot
-Front-end ⇒ Vue
 공공데이터에서 제공하는 낚시터 정보 API를 이용해 전국 유료 낚시터의 정보를 태그 필터링 혹은 검색 등으로 파악할 수 있는 프로젝트입니다.
 
 ---
@@ -17,7 +15,8 @@ Front-end ⇒ Vue
 
 ### 실행 GIF
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2ee077da-867d-41d8-bd89-c3dd8b4bab10/fishGIF.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2ee077da-867d-41d8-bd89-c3dd8b4bab10/fishGIF.gif)
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/66605925/113298988-5c8a8b80-9337-11eb-94ff-b601b4f1bf68.gif)
+
 
 ---
 
