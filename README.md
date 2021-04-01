@@ -15,7 +15,7 @@
 
 ### 실행 GIF
 
-![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/66605925/113298988-5c8a8b80-9337-11eb-94ff-b601b4f1bf68.gif)
+![fishGIF](https://user-images.githubusercontent.com/66605925/113300620-0e768780-9339-11eb-95b7-92d1448065b9.gif)
 
 
 ---
